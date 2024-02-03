@@ -1,0 +1,41 @@
+﻿@model MvsStok.Models.Entity.TBLURUNLER
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<br />
+<h2>ÜRÜN EKME </h2>
+
+
+<form class="form-group mt-5" method="post">
+    <div>
+        <label>ÜRÜN ADI</label>
+        <input type="text" class="form-control" name="URUNAD" required="" maxlength="25"  placeholder="Ürün Adı Girininiz.."/>
+    </div>
+    <br />
+    <div>
+        <label>ÜRÜN MARKASI</label>
+        <input type="text" class="form-control" name="MARKA" required="" placeholder="Marka Bilgisi Girininiz.."/>
+    </div>
+    <br />
+    <div>
+        <label>ÜRÜN KATEGORİSİ</label>
+       @Html.DropDownListFor(m=>m.TBLKATEGORILER.KATEGORIID,(List<SelectListItem>)ViewBag.dgr,new{@class="form-control"})
+    </div>
+    <br />
+    <div>
+    <label>ÜRÜN FİYATI</label>
+    <input type="text" class="form-control" name="FIYAT" required="" placeholder="Fiyat Bilgisi Girininiz.." />
+</div>
+<br />
+    <div>
+    <label>ÜRÜN STOK BİLGİSİ</label>
+    <input type="text" class="form-control" name="STOK"  required="" placeholder="Stok Miktarını Girininiz.."/>
+</div>
+    <br />
+    <div>
+        <button class="btn btn-info mt-3">ÜRÜN EKLE</button>
+    </div>
+</form>
+
+
