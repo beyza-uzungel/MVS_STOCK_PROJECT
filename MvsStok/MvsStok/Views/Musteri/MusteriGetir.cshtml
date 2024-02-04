@@ -1,0 +1,26 @@
+﻿@model MvsStok.Models.Entity.TBLMUSTERILER 
+@{
+    ViewBag.Title = "MusteriGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Musteri Güncelleme </h2>
+<br />
+@using (Html.BeginForm("Guncelle", "Musteri", FormMethod.Post))
+            {
+<div class="form-group">
+    <p class="font-weight-bold">MÜŞTERİ ID : </p>
+    @Html.TextBoxFor(m => m.MUSTERIID, new { @class = "form-control" })
+    <br />
+    <p class="font-weight-bold">MÜŞTERİ ADI : </p>
+    @Html.TextBoxFor(m => m.MUSTERIAD, new { @class = "form-control" })
+    <br />
+    <p class="font-weight-bold">MÜŞTERİ SOYADI : </p>
+    @Html.TextBoxFor(m => m.MUSTERISOYAD, new { @class = "form-control" })
+
+</div>
+<br />
+<div>
+    <button class="btn btn-warning">GÜNCELLE</button>
+</div>
+   }
